@@ -3,24 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Liberté Égalité Fraternité, plus qu’un slogan ?</title>
+<title>Liberté Égalité Fraternité</title>
 
 <style>
 body{
     margin:0;
     font-family: Arial, sans-serif;
-    font-size:16px;
-    color:black;
     background:white;
 }
 
-/* TITRE ANIMÉ */
+/* TITRE */
 header{
     overflow:hidden;
     white-space:nowrap;
     padding:30px 0;
-    background:white;
     border-bottom:2px solid #ccc;
 }
 header h1{
@@ -37,23 +33,21 @@ header h1{
     100%{transform:translateX(-200%);opacity:0;}
 }
 
-/* BOUTONS PRINCIPAUX */
+/* NAVIGATION */
 .nav{
     display:flex;
     justify-content:center;
-    gap:80px;
+    gap:60px;
     margin:30px;
 }
 button{
     font-family:'Georgia',serif;
-    font-size:30px;
+    font-size:25px;
     padding:10px 20px;
     cursor:pointer;
-    background:#610C0C;
-    color:white;
-    border:ridge;
     background:#360404;
-    border-radius:3px;
+    color:white;
+    border-radius:5px;
 }
 button:hover{
     background:#F56262;
@@ -68,78 +62,77 @@ button:hover{
 .mindmap{
     display:flex;
     flex-wrap:wrap;
-    gap:30px;
+    gap:20px;
     margin-top:20px;
 }
 .mindmap div{
     padding:15px;
     border-radius:8px;
     color:white;
+    cursor:pointer;
 }
+
 .c1{background:#003B75;}
-.c2{background:#A3D2FF;}
+.c2{background:#A3D2FF; color:black;}
 .c3{background:#145996;}
-.c4{background:#85BFF2;}
+.c4{background:#85BFF2; color:black;}
 .c5{background:#168CCC;}
 .c6{background:#FF8AEB;}
 .c7{background:#C953B6;}
 .c8{background:#FF9A4D;}
 .c9{background:#E87D27;}
 
+.hidden{
+    display:none;
+}
+
 /* FRISE */
 .timeline{
     position:relative;
-    margin:20px 0;
-    padding:80px 0;
+    margin-top:60px;
+    text-align:center;
 }
 .timeline::before{
     content:"";
     position:absolute;
-    top:20%;
+    top:0;
     left:0;
     right:0;
-    height:20px;
+    height:8px;
     background:red;
 }
+
 .event{
-    position:relative;
-    width:20%;
-    text-align:center;
     display:inline-block;
+    width:18%;
+    vertical-align:top;
+    margin-top:40px;
+    white-space:nowrap;
 }
-.event::before{
-    content:"";
-    position:absolute;
-    top:45%;
-    left:50%;
-    width:4px;
-    height:40px;
-    z-index: timeline::before{
-    background:black;
-}
+
 .date{
     font-weight:bold;
 }
-.above{
-    margin-bottom:20px;
-}
-.below{
-    margin-top:100px;
+
+.explain{
+    margin-top:10px;
+    white-space:normal;
 }
 
 /* LISTES */
 ul{
-    margin-top:30px;
-}
-.hidden{
-    display:none;
+    margin-top:20px;
 }
 </style>
 
 <script>
 function toggle(id){
     let el=document.getElementById(id);
-    el.style.display = el.style.display==="block" ? "none" : "block";
+    if(el.style.display==="block"){
+        el.style.display="none";
+    } else {
+        el.style.display="block";
+    }
 }
 </script>
 
@@ -157,116 +150,110 @@ function toggle(id){
 <button onclick="toggle('antisemitisme')">La lutte contre l’antisémitisme</button>
 </div>
 
-<!-- LA NATION -->
+<!-- ================= NATION ================= -->
 <div id="nation" class="section">
 
-<p onclick="toggle('etat')" style="cursor:pointer;"><b>L’état nation</b></p>
+<p onclick="toggle('etat')" style="cursor:pointer;"><b>L’État nation</b></p>
 <div id="etat" class="hidden">
 <div class="mindmap">
-<div class="c1">Apparition aux XVI-XVII ème siècle</div>
-<div class="c2">Signature des traités de Westphalie en 1648</div>
-<div class="c3">Remplace les empires de l’Ouest</div>
-<div class="c4">Repose sur la notion d’unité d’un état et d’appartenance commune à un groupe</div>
-<div class="c5">Construction politique, garantit la cohésion sociale</div>
+<div class="c1">Apparition XVI-XVIIe siècle</div>
+<div class="c2">Traités de Westphalie (1648)</div>
+<div class="c3">Remplace les empires</div>
+<div class="c4">Unité politique et appartenance commune</div>
+<div class="c5">Garantit la cohésion sociale</div>
 </div>
 </div>
 
 <p onclick="toggle('nationalisme')" style="cursor:pointer;"><b>Le nationalisme</b></p>
 <div id="nationalisme" class="hidden">
 <div class="mindmap">
-<div class="c6">S’impose en France durant la Révolution Française en 1789</div>
-<div class="c7">Met en avant le droit des peuples à disposer d’eux-mêmes</div>
+<div class="c6">Révolution française (1789)</div>
+<div class="c7">Droit des peuples à disposer d’eux-mêmes</div>
 </div>
 </div>
 
 </div>
 
-<!-- LAICITE -->
+<!-- ================= LAICITE ================= -->
 <div id="laicite" class="section">
 
 <p onclick="toggle('historique')" style="cursor:pointer;"><b>Historique de la laïcité</b></p>
 <div id="historique" class="hidden">
+
 <div class="timeline">
 
 <div class="event">
-<div class="above">
 <div class="date">1598</div>
-Édit de Nantes
-</div>
-<div class="below">Tolérance religieuse</div>
+<div>Édit de Nantes</div>
+<div class="explain">Tolérance religieuse</div>
 </div>
 
 <div class="event">
-<div class="above">
 <div class="date">1789</div>
-Déclaration des droits de l’homme et du citoyen
-</div>
-<div class="below">Article 10 : « Nul ne doit être inquiété pour ses opinions, même religieuses, pourvu que leur manifestation ne trouble pas l'ordre public établi par la loi. »</div>
-</div>
-
-<div class="event">
-<div class="above">
-<div class="date">27 novembre 1883</div>
-Lettre aux instituteurs de Jules Ferry
-</div>
-<div class="below">Enseignement moral neutre</div>
+<div>Déclaration des droits de l’homme</div>
+<div class="explain">Liberté de conscience (article 10)</div>
 </div>
 
 <div class="event">
-<div class="above">
+<div class="date">1883</div>
+<div>Lettre de Jules Ferry</div>
+<div class="explain">Enseignement moral neutre</div>
+</div>
+
+<div class="event">
 <div class="date">1905</div>
-Loi de séparation des Églises et de l'État
-</div>
-<div class="below"></div>
+<div>Loi de séparation</div>
+<div class="explain">Séparation Églises / État</div>
 </div>
 
-white space: nowrap;
 <div class="event">
-<div class="above">
 <div class="date">1958</div>
-Constitution Vème République
-</div>
-<div class="below">La laïcité fonde le pacte républicain et garantit l’uniformité nationale</div>
-</div>
-
-</div>
+<div>Constitution Vème République</div>
+<div class="explain">Laïcité principe constitutionnel</div>
 </div>
 
-<p onclick="toggle('isonomie')" style="cursor:pointer;"><b>Laïcité, garante de l’isonomie</b></p>
-<div id="isonomie" class="hidden">
+</div>
+</div>
+
+<!-- Cartes mentales cliquables -->
+
 <div class="mindmap">
-<div class="c8">La laïcité garantie</div>
-<div class="c9">La laïcité permet de lutter contre</div>
-</div>
+
+<div class="c8" onclick="toggle('garantie')">
+La laïcité garantit
 </div>
 
-<p onclick="toggle('garantie')" style="cursor:pointer;"><b>La laïcité garantie</b></p>
+<div class="c9" onclick="toggle('lutter')">
+La laïcité permet de lutter contre
+</div>
+
+</div>
+
 <div id="garantie" class="hidden">
-<li>L’égalité de tous devant la loi quelle que soit sa religion : l’isonomie</li>
-<li>La neutralité de l’état en affaires religieuse</li>
-<li>La liberté de conscience de tous les citoyens français</li>
+<ul>
+<li>Égalité devant la loi (isonomie)</li>
+<li>Neutralité de l’État</li>
+<li>Liberté de conscience</li>
+</ul>
 </div>
-</div>
-    
-<p onclick="toggle('lutter')" style="cursor:pointer;"><b>La laïcité permet de lutter contre</b></p>
+
 <div id="lutter" class="hidden">
-<li>Les discriminations raciales et religieuses</li>
-</div>
-</div>
-
-
-</div>
-
+<ul>
+<li>Discriminations religieuses</li>
+<li>Discriminations raciales</li>
+</ul>
 </div>
 
-<!-- ANTISEMITISME -->
+</div>
+
+<!-- ================= ANTISEMITISME ================= -->
 <div id="antisemitisme" class="section">
 
 <p onclick="toggle('actions')" style="cursor:pointer;"><b>Actions concrètes</b></p>
 <div id="actions" class="hidden">
 <ul>
-<li>Semaine d'éducation contre le racisme et l'antisémitisme du 21 au 28 mars → Faire acquérir à tous les élèves le respect de l'égale dignité des êtres humains, de la liberté de conscience et de la laïcité</li>
-<li>Création du comité opérationnel de lutte contre le racisme, l'antisémitisme, la haine anti-LGBT et les discriminations liées à l'origine (CORAHD) en 2016</li>
+<li>Semaine d’éducation contre le racisme et l’antisémitisme (21-28 mars)</li>
+<li>Création du CORAHD (2016)</li>
 </ul>
 </div>
 
@@ -274,10 +261,8 @@ Constitution Vème République
 <div id="memoire" class="hidden">
 <ul>
 <li>Mémoire de la Shoah</li>
+<li>France membre actif de l’IHRA (1998)</li>
 </ul>
-<p>
-La France est un membre actif de l’IHRA (International Holocaust Remembrance Alliance), organisation intergouvernementale créée en 1998. L’IHRA promeut la mémoire de la Shoah et l’éducation vis-à-vis des victimes de l’Holocauste.
-</p>
 </div>
 
 </div>
