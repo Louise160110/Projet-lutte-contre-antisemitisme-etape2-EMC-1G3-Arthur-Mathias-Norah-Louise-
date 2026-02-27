@@ -90,37 +90,38 @@ button:hover{
 .timeline{
     position:relative;
     margin:20px 0;
-    padding:60px 0;
+    padding:80px 0;
 }
 .timeline::before{
     content:"";
     position:absolute;
-    top:30%;
+    top:50%;
     left:0;
     right:0;
-    height:30px;
+    height:20px;
     background:red;
 }
 .event{
     position:relative;
-    width:10%;
+    width:20%;
     text-align:center;
     display:inline-block;
 }
 .event::before{
     content:"";
     position:absolute;
-    top:30%;
+    top:45%;
     left:50%;
     width:4px;
-    height:40px;
-    background:#520202;}
+    height:100px;
+    z-index: timeline::before{
+    background:black;
 }
 .date{
     font-weight:bold;
 }
 .above{
-    margin-bottom:50px;
+    margin-bottom:20px;
 }
 .below{
     margin-top:100px;
