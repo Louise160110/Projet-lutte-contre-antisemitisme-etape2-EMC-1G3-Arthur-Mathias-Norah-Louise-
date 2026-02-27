@@ -9,7 +9,6 @@
 body{
     margin:0;
     font-family: Arial, sans-serif;
-    background:white;
 }
 
 /* TITRE */
@@ -33,7 +32,7 @@ header h1{
     100%{transform:translateX(-200%);opacity:0;}
 }
 
-/* NAVIGATION */
+/* NAV */
 .nav{
     display:flex;
     justify-content:center;
@@ -58,7 +57,7 @@ button:hover{
     padding:20px 60px;
 }
 
-/* CARTES MENTALES */
+/* CARTES */
 .mindmap{
     display:flex;
     flex-wrap:wrap;
@@ -88,26 +87,26 @@ button:hover{
 
 /* FRISE */
 .timeline{
-    position:relative;
     margin-top:60px;
+    position:relative;
     text-align:center;
 }
-.timeline::before{
-    content:"";
-    position:absolute;
-    top:0;
-    left:0;
-    right:0;
+
+.timeline-line{
     height:8px;
     background:red;
+    margin:40px 0;
+}
+
+.timeline-events{
+    display:flex;
+    justify-content:space-between;
+    white-space:nowrap;
 }
 
 .event{
-    display:inline-block;
-    width:18%;
-    vertical-align:top;
-    margin-top:40px;
-    white-space:nowrap;
+    width:19%;
+    text-align:center;
 }
 
 .date{
@@ -119,9 +118,8 @@ button:hover{
     white-space:normal;
 }
 
-/* LISTES */
 ul{
-    margin-top:20px;
+    margin-top:15px;
 }
 </style>
 
@@ -159,8 +157,8 @@ function toggle(id){
 <div class="c1">Apparition XVI-XVIIe siècle</div>
 <div class="c2">Traités de Westphalie (1648)</div>
 <div class="c3">Remplace les empires</div>
-<div class="c4">Unité politique et appartenance commune</div>
-<div class="c5">Garantit la cohésion sociale</div>
+<div class="c4">Unité politique</div>
+<div class="c5">Cohésion sociale</div>
 </div>
 </div>
 
@@ -168,7 +166,7 @@ function toggle(id){
 <div id="nationalisme" class="hidden">
 <div class="mindmap">
 <div class="c6">Révolution française (1789)</div>
-<div class="c7">Droit des peuples à disposer d’eux-mêmes</div>
+<div class="c7">Droit des peuples</div>
 </div>
 </div>
 
@@ -182,40 +180,65 @@ function toggle(id){
 
 <div class="timeline">
 
+<div class="timeline-events">
+
 <div class="event">
 <div class="date">1598</div>
 <div>Édit de Nantes</div>
-<div class="explain">Tolérance religieuse</div>
 </div>
 
 <div class="event">
 <div class="date">1789</div>
-<div>Déclaration des droits de l’homme</div>
-<div class="explain">Liberté de conscience (article 10)</div>
+<div>Déclaration des droits</div>
 </div>
 
 <div class="event">
 <div class="date">1883</div>
 <div>Lettre de Jules Ferry</div>
-<div class="explain">Enseignement moral neutre</div>
 </div>
 
 <div class="event">
 <div class="date">1905</div>
 <div>Loi de séparation</div>
-<div class="explain">Séparation Églises / État</div>
 </div>
 
 <div class="event">
 <div class="date">1958</div>
-<div>Constitution Vème République</div>
-<div class="explain">Laïcité principe constitutionnel</div>
+<div>Constitution</div>
+</div>
+
+</div>
+
+<div class="timeline-line"></div>
+
+<div class="timeline-events">
+
+<div class="event">
+<div class="explain">Tolérance religieuse</div>
+</div>
+
+<div class="event">
+<div class="explain">Liberté de conscience</div>
+</div>
+
+<div class="event">
+<div class="explain">Neutralité scolaire</div>
+</div>
+
+<div class="event">
+<div class="explain">Églises séparées de l’État</div>
+</div>
+
+<div class="event">
+<div class="explain">Principe constitutionnel</div>
+</div>
+
 </div>
 
 </div>
 </div>
 
-<!-- Cartes mentales cliquables -->
+<h3>Laïcité, garante de l’isonomie</h3>
 
 <div class="mindmap">
 
@@ -223,7 +246,7 @@ function toggle(id){
 La laïcité garantit
 </div>
 
-<div class="c9" onclick="toggle('lutter')">
+<div class="c9" onclick="toggle('lutte')">
 La laïcité permet de lutter contre
 </div>
 
@@ -237,7 +260,7 @@ La laïcité permet de lutter contre
 </ul>
 </div>
 
-<div id="lutter" class="hidden">
+<div id="lutte" class="hidden">
 <ul>
 <li>Discriminations religieuses</li>
 <li>Discriminations raciales</li>
@@ -252,7 +275,7 @@ La laïcité permet de lutter contre
 <p onclick="toggle('actions')" style="cursor:pointer;"><b>Actions concrètes</b></p>
 <div id="actions" class="hidden">
 <ul>
-<li>Semaine d’éducation contre le racisme et l’antisémitisme (21-28 mars)</li>
+<li>Semaine contre le racisme et l’antisémitisme (21-28 mars)</li>
 <li>Création du CORAHD (2016)</li>
 </ul>
 </div>
@@ -261,7 +284,7 @@ La laïcité permet de lutter contre
 <div id="memoire" class="hidden">
 <ul>
 <li>Mémoire de la Shoah</li>
-<li>France membre actif de l’IHRA (1998)</li>
+<li>France membre de l’IHRA</li>
 </ul>
 </div>
 
